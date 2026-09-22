@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANTISTAR-moviMIENTO — transmit from the underground</title>
+<meta name="description" content="ANTISTAR-moviMIENTO — a pirate livestreaming platform. The signal rises.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 30,28 2,28' fill='%23ff2d6f'/%3E%3Ccircle cx='16' cy='20' r='5' fill='%23050308'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
+</head>
+<body>
+
+<!-- ======================== BOOT LAYER ======================== -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-core">
+    <div class="boot-antistar"><span>A</span>NTISTAR</div>
+    <div class="boot-mov">— moviMIENTO —</div>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <div class="boot-log" id="bootLog"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+</div>
+
+<div id="app" class="app" hidden>
+
+  <!-- ======================== TICKER ======================== -->
+  <div class="ticker" role="marquee" aria-label="network ticker">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ======================== HEADER ======================== -->
+  <header class="topbar">
+    <a class="brand" href="#/" data-nav>
+      <span class="brand-sigil" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26"><polygon points="16,2 30,28 2,28" fill="var(--rose)"/><circle cx="16" cy="20" r="4.5" fill="var(--void)"/></svg>
+      </span>
+      <span class="brand-word">ANTISTAR<b>-moviMIENTO</b></span>
+    </a>
+
+    <nav class="mainnav" aria-label="Primary">
+      <a href="#/" data-nav class="navlink" data-route="home"><iconify-icon icon="ph:broadcast-bold"></iconify-icon>SIGNALS</a>
+      <a href="#/manifesto" data-nav class="navlink" data-route="manifesto"><iconify-icon icon="ph:flag-banner-bold"></iconify-icon>MANIFESTO</a>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="search" role="search">
+        <iconify-icon icon="ph:magnifying-glass-bold"></iconify-icon>
+        <input id="searchInput" type="search" placeholder="search the movement…" autocomplete="off" aria-label="Search channels">
+      </div>
+      <button class="btn btn-live" id="goLiveBtn">
+        <iconify-icon icon="ph:broadcast-bold"></iconify-icon><span>GO&nbsp;LIVE</span>
+      </button>
+      <button class="iconbtn" id="themeBtn" title="Toggle phosphor mode" aria-label="Toggle theme">
+        <iconify-icon icon="ph:crt-screen-bold"></iconify-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================== VIEWS ======================== -->
+  <main id="view" class="view" aria-live="polite"></main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="foot-brand">ANTISTAR<b>-moviMIENTO</b></div>
+      <p class="foot-line">No algorithm. No masters. Only the signal.<br>Built by the movement, for the movement. <span class="mono">est. Ø</span></p>
+      <div class="foot-tags mono">
+        <span>PEER-TO-PEER</span><span>·</span><span>UNCENSORABLE</span><span>·</span><span>100% VOLTAGE</span><span>·</span><span>NO ADS FOREVER</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ======================== MODAL ROOT / TOAST ROOT ======================== -->
+<div id="modalRoot"></div>
+<div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

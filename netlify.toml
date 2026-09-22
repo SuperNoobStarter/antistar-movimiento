@@ -1,0 +1,33 @@
+# Netlify — ANTISTAR-moviMIENTO (pure static, no build step)
+[build]
+  command = "echo 'antistar: static, no build'"
+  publish = "."
+
+[dev]
+  framework = "#static"
+  targetPort = 8137
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# SPA-ish hash routing needs no redirects, but keep 404s honest for stray paths
+[[redirects]]
+  from = "/app.js"
+  to = "/app.js"
+  status = 200
+
+# ── TICKER INVASION (static RSS wall, lives in ticker-invasion/public) ──
+# The page runs in browser-direct mode here (no Node on the CDN): it pulls
+# all 28 feeds through CORS relays from the visitor's browser.
+[[redirects]]
+  from = "/ticker"
+  to = "/ticker-invasion/public/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ticker/*"
+  to = "/ticker-invasion/public/index.html"
+  status = 200

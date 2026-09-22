@@ -1,0 +1,18 @@
+# scratch / tooling / secrets — never publish
+.freebuff/
+.scratch/
+.tools/
+.netlify/
+osm-easy-points.zip
+deploy.log
+
+# Ticker Invasion (its own repo)
+ticker-invasion/node_modules/
+ticker-invasion/deploy.log
+
+# OSM plugin (its own repo)
+osm-easy-points/
+
+# OS junk
+Thumbs.db
+Desktop.ini

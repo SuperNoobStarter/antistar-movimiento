@@ -1,0 +1,19 @@
+antistar.zip
+deploy.log
+server.log
+server.js
+ROADMAP.md
+README.md
+.netlify
+node_modules
+.tools
+
+# ── sub-projects: only their public assets ship ──
+osm-easy-points
+osm-easy-points.zip
+ticker-invasion/server.js
+ticker-invasion/README.md
+ticker-invasion/netlify.toml
+ticker-invasion/.netlifyignore
+ticker-invasion/package.json
+ticker-invasion/package-lock.json
