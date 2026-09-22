@@ -6,11 +6,8 @@
 osm-easy-points.zip
 deploy.log
 
-# Ticker Invasion (its own repo)
-ticker-invasion/node_modules/
-ticker-invasion/deploy.log
-
-# OSM plugin (its own repo)
+# Ticker Invasion & OSM plugin live in their own separate GitHub repos
+ticker-invasion/
 osm-easy-points/
 
 # OS junk
